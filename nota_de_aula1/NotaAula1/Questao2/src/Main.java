@@ -1,4 +1,3 @@
-//    Produto p = new Produto("Geladeira", "001", 150.5, "Branca", 3249.90, 5);
 import java.util.Scanner;
 
 public class Main {
@@ -51,7 +50,7 @@ public class Main {
                 System.out.println("Peso: " + p.getPeso());
                 System.out.println("Cor: " + p.getCor());
                 System.out.println("Valor: " + p.getValor());
-                System.out.println("Estoque: " + p.getEstoque());
+                System.out.println("\u001B[31m" + "Estoque: " + p.getEstoque() + "\u001B[0m");
                 break;
 
             case 3:
