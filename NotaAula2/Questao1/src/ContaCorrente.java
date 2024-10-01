@@ -15,15 +15,23 @@ public class ContaCorrente {
 
     }
 
-    private void setValor_em_conta(double valor_em_conta) {
+    private void setValor_em_conta() {
         this.valor_em_conta = valor_em_conta;
     }
 
-    private double getValor_em_conta(double valor_deposito) {
+    public double getValor_em_conta() {
         return valor_em_conta;
     }
 
-    private void deposito() {
+    public void dados_conta(String correntista, String conta, int agencia) {
+
+        System.out.println("Correntista: " + correntista);
+        System.out.println("Número da conta: " + conta);
+        System.out.println("Agencia: " + agencia);
+
+    }
+
+    public void deposito() {
 
         System.out.print("Quanto gostaria de depositar? R$");
         valor_deposito = sc.nextDouble();
@@ -33,7 +41,7 @@ public class ContaCorrente {
 
     }
 
-    private void saque() {
+    public void saque() {
 
         System.out.print("Quanto gostaria de sacar? R$");
         valor_saque = sc.nextDouble();
@@ -58,7 +66,7 @@ public class ContaCorrente {
 
     }
 
-    private void cheque_especial() {
+    public void cheque_especial() {
         System.out.println("ATENÇÃO! Ao utilizar essa opção sua conta ficará no negativo. ");
         System.out.println("Limite disponível no Cheque Especial de R$ 1.000,00");
         System.out.println("Gostaria de continuar? [1] - Sim / [2] - Não");
@@ -87,8 +95,7 @@ public class ContaCorrente {
                 break;
         }
 
+
+
     }
-
-
-
 }

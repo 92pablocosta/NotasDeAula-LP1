@@ -4,10 +4,11 @@ public class Main {
     public static void main(String[] args) {
 
         Scanner sc = new Scanner(System.in);
+        ContaCorrente cc = new ContaCorrente();
+        ContaPoupanca pp = new ContaPoupanca();
+
         // Variaveis
         int opcao;
-        double conta_corrente;
-        double poupanca;
         String correntista;
         String numero_conta;
         int numero_agencia;
@@ -23,8 +24,7 @@ public class Main {
         System.out.println("Insira o numero de agencia: ");
         numero_agencia = sc.nextInt();
 
-        ContaCorrente cc = new ContaCorrente();
-        ContaPoupanca pp = new ContaPoupanca();
+
 
         do {
             System.out.println("Bem vindo, " + correntista + "! Selecione uma opção abaixo:");
@@ -34,9 +34,48 @@ public class Main {
             opcao = sc.nextInt();
 
             switch (opcao) {
+
                 case 1:
+                    int op;
+                    do {
+                    System.out.println("Você está no menu da sua Conta Corrente");
+                    System.out.println("Escolha uma opção para começarmos:");
+                    System.out.println("1 - Saldo");
+                    System.out.println("2 - Deposito");
+                    System.out.println("3 - Saque");
+                    System.out.println("4 - Dados da conta");
+                    System.out.println("0 - Sair");
+                    op = sc.nextInt();
 
 
+                        switch (op) {
+                            case 1:
+                                System.out.println("O saldo atual é de R$" + cc.getValor_em_conta());
+                                break;
+                            case 2:
+                                cc.deposito();
+                                break;
+                            case 3:
+                                cc.saque();
+                                break;
+                            case 4:
+                                cc.dados_conta(correntista, numero_conta, numero_agencia);
+                        }
+                    } while (op != 0);
+                    break;
+
+                case 2:
+                    System.out.println("Você está no menu da sua Conta Poupança!");
+                    System.out.println("Escolha uma opção para começarmos:");
+                    System.out.println("1 - Saldo");
+                    System.out.println("2 - Deposito");
+                    System.out.println("3 - Saque");
+                    System.out.println("4 - Dados da conta");
+                    System.out.println("0 - Sair");
+                    break;
+
+                case 3:
+                    break;
             }
 
         } while (opcao != 3);
