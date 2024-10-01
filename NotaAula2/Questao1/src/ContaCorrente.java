@@ -3,6 +3,11 @@ import java.util.Scanner;
 public class ContaCorrente {
 
     Scanner sc = new Scanner(System.in);
+
+    public String correntista = "Fernanda";
+    public String conta = "1122-0";
+    public int agencia = 22_004;
+
     private double valor_em_conta;
     private double valor_deposito;
     private double valor_saque;
@@ -15,15 +20,57 @@ public class ContaCorrente {
 
     }
 
-    private void setValor_em_conta() {
-        this.valor_em_conta = valor_em_conta;
+    public String getCorrentista() {
+        return correntista;
     }
 
-    public double getValor_em_conta() {
-        return valor_em_conta;
+    public String getConta() {
+        return conta;
     }
 
-    public void dados_conta(String correntista, String conta, int agencia) {
+    public int getAgencia() {
+        return agencia;
+    }
+
+
+    public void menu() {
+
+        int op;
+        do {
+            System.out.println("Você está no menu da sua Conta Corrente");
+            System.out.println("Escolha uma opção para começarmos:");
+            System.out.println("1 - Saldo");
+            System.out.println("2 - Deposito");
+            System.out.println("3 - Saque");
+            System.out.println("4 - Dados da conta");
+            System.out.println("0 - Sair");
+            op = sc.nextInt();
+            switch (op) {
+                case 1:
+                    saldo();
+                    break;
+                case 2:
+                    deposito();
+                    break;
+                case 3:
+                    saque();
+                    break;
+                case 4:
+                    dados_conta();
+                    break;
+                default:
+                    System.out.println("Opção inválida.");
+            }
+        } while (op != 0);
+
+
+    }
+
+    public void saldo() {
+        System.out.println("Saldo disponível: R$" + valor_em_conta);
+    }
+
+    public void dados_conta() {
 
         System.out.println("Correntista: " + correntista);
         System.out.println("Número da conta: " + conta);
@@ -57,6 +104,8 @@ public class ContaCorrente {
                     break;
                 case 2:
                     break;
+                default:
+                    System.out.println("Opção inválida.");
             }
         } else {
             valor_em_conta -= valor_saque;
@@ -66,7 +115,7 @@ public class ContaCorrente {
 
     }
 
-    public void cheque_especial() {
+    private void cheque_especial() {
         System.out.println("ATENÇÃO! Ao utilizar essa opção sua conta ficará no negativo. ");
         System.out.println("Limite disponível no Cheque Especial de R$ 1.000,00");
         System.out.println("Gostaria de continuar? [1] - Sim / [2] - Não");
@@ -92,6 +141,10 @@ public class ContaCorrente {
                 }
 
             case 2:
+                break;
+
+            default:
+                System.out.println("Opção inválida.");
                 break;
         }
 
