@@ -14,7 +14,7 @@ public class ContaCorrente {
 
     public ContaCorrente() {
 
-        this.valor_em_conta = 2.57;
+        this.valor_em_conta = 0;
         this.valor_deposito = 0;
         this.valor_saque = 0;
 
