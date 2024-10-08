@@ -13,8 +13,6 @@ public class ContaPoupanca {
     public double valor_saque;
 
     public double rendimento;
-    public int rendimento_meses;
-    public int rendimento_anos;
     private int opcao;
 
     public ContaPoupanca() {
@@ -23,8 +21,6 @@ public class ContaPoupanca {
         this.valor_deposito = 0;
         this.valor_saque = 0;
         this.rendimento = 0;
-        this.rendimento_meses = 0;
-        this.rendimento_anos = 0;
         this.opcao = 0;
 
     }
@@ -56,7 +52,7 @@ public class ContaPoupanca {
                 dados_conta();
                 break;
             case 5:
-                System.out.println("Criar método");
+                calcularRendimento();
                 break;
             default:
                 System.out.println("Opção inválida.");
@@ -101,24 +97,18 @@ public class ContaPoupanca {
 
     }
 
-    public double calcularRendimento() {
+    public void calcularRendimento() {
 
-        System.out.println("Gostaria de calcular o rendimento em [1] - meses ou [2] - anos?");
-        int meses_anos = sc.nextInt();
 
-        switch (meses_anos) {
-            case 1:
-                int quantidade_meses;
-                double rendimento;
+        System.out.println("Digite a quantidade de meses para saber o rendimento final:");
+        int quantidade_meses = sc.nextInt();
 
-                System.out.println("Digite a quantidade de meses para saber o rendimento final:");
-                quantidade_meses = sc.nextInt();
+        for (int i = 0; i < quantidade_meses; i++) {
 
-                for (int i = 0; i < quantidade_meses; i++) {
-
-                }
+            rendimento = (valor_em_conta + rendimento) * 0.05;
 
         }
+        System.out.println("Rendimento: " + rendimento);
     }
 
 
