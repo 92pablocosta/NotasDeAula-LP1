@@ -1,4 +1,4 @@
-import java.util.Scanner;
+import java.time.LocalTime;
 
 public class Corrida {
 
@@ -12,8 +12,8 @@ public class Corrida {
 
         this.distancia = 0;
         this.tempoEspera = 0;
-        this.tarifaBase = 0;
-        this.fatorDemanda = 0;
+        this.tarifaBase = 2.5;
+        this.fatorDemanda = 1;
         this.valorFinal = (distancia * 2) + (tempoEspera * 0.5) + tarifaBase * fatorDemanda;
 
     }
@@ -49,8 +49,18 @@ public class Corrida {
 
     public double calcularValorCorrida() {
 
+        LocalTime now = LocalTime.now();
+        LocalTime inicioHorarioPico = LocalTime.of(16, 30);
+        LocalTime fimHorarioPico = LocalTime.of(19, 30);
+
         this.valorFinal = (distancia * 2) + (tempoEspera * 0.5) + tarifaBase * fatorDemanda;
-        return valorFinal;
+
+        if (now.isAfter(inicioHorarioPico) || now.isBefore(fimHorarioPico)) {
+            this.fatorDemanda = 3;
+            return valorFinal;
+        } else {
+            return valorFinal;
+        }
 
     }
 
