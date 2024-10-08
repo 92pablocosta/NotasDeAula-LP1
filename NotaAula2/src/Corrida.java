@@ -66,10 +66,10 @@ public class Corrida {
 
     public void exibirDetalhesCorrida() {
 
-        System.out.println("Distancia: " + distancia);
-        System.out.println("Tempo Espera: " + tempoEspera);
-        System.out.println("TarifaBase: " + tarifaBase);
-        System.out.println("Fator Demanda: " + fatorDemanda);
+        System.out.println("Distancia: " + distancia + "Km");
+        System.out.println("Tempo Espera: " + tempoEspera + "Min.");
+        System.out.println("TarifaBase: R$" + tarifaBase);
+        System.out.println("Fator Demanda: " + fatorDemanda + "x");
 
     }
 }
