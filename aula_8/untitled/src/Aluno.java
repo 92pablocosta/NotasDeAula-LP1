@@ -1,48 +1,38 @@
-public class Aluno {
+public class Aluno extends Pessoa {
 
-    private String nome_completo;
-    private String nome_preferido;
-    private int idade;
-    private String sexo;
+    private String matricula;
+    private String curso;
 
-    public Aluno(String nome_completo, String nome_preferido, int idade, String sexo) {
-        this.nome_completo = nome_completo;
-        this.nome_preferido = nome_preferido;
-        this.idade = idade;
-        this.sexo = sexo;
+    public Aluno(String nome, int idade, String sexo, String matricula, String curso) {
+        super(nome, idade, sexo);
+        this.matricula = matricula;
+        this.curso = curso;
     }
 
-    // get e set
-
-    public void setNome_completo(String nome_completo) {
-        this.nome_completo = nome_completo;
+    public void setMatricula(String matricula) {
+        this.matricula = matricula;
     }
 
-    public String getNome_completo() {
-        return nome_completo;
+    public String getMatricula() {
+        return matricula;
     }
 
-    public void setNome_preferido(String nome_preferido) {
-        this.nome_preferido = nome_preferido;
+    public void setCurso(String curso) {
+        this.curso = curso;
     }
 
-    public String getNome_preferido() {
-        return nome_preferido;
+    public String getCurso() {
+        return curso;
     }
 
-    public void setIdade(int idade) {
-        this.idade = idade;
+    @Override
+    public void quemSouEu() {
+
     }
 
-    public int getIdade() {
-        return idade;
-    }
+    @Override
+    public void minhaAtividade() {
 
-    public void setSexo(String sexo) {
-        this.sexo = sexo;
-    }
-    public String getSexo() {
-        return sexo;
     }
 
 

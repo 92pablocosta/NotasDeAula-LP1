@@ -1,8 +1,8 @@
 public final class Professor extends Pessoa implements Remuneravel {
     String disciplina_ministrada;
 
-    public Professor(String nome, int idade, String disciplina_ministrada) {
-        super(nome, idade);
+    public Professor(String nome, int idade, String sexo, String disciplina_ministrada) {
+        super(nome, idade, sexo);
         this.disciplina_ministrada = disciplina_ministrada;
     }
 
